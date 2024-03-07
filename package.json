@@ -19,11 +19,22 @@
         "husky": "^9.0.11",
         "lint-staged": "^15.2.2",
         "nodemon": "^3.1.0",
+        "prisma": "^5.10.2",
         "ts-node": "^10.9.2",
         "typescript": "^5.4.2"
     },
     "dependencies": {
+        "@prisma/client": "5.10.2",
+        "@vinejs/vine": "^1.7.1",
         "dotenv": "^16.4.5",
+        "helmet": "^7.1.0",
         "zod": "^3.22.4"
+    },
+    "imports": {
+        "#controllers/*": "./app/controllers/*.js",
+        "#exceptions/*": "./app/exceptions/*.js",
+        "#middleware/*": "./app/middleware/*.js",
+        "#validators/*": "./app/validators/*.js",
+        "#routers/*": "./app/routers/*.js"
     }
 }
