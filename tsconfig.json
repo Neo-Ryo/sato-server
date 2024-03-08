@@ -1,17 +1,19 @@
 {
     "compilerOptions": {
         "target": "es2016",
-        "module": "commonjs",
+        "module": "NodeNext",
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true,
+        "baseUrl": "./app",
         "outDir": "./dist",
+        "types": ["node", "express"],
         "paths": {
-            "#controllers/*": ["./app/controllers/*"],
-            "#exceptions/*": ["./app/exceptions/*"],
-            "#middleware/*": ["./app/middleware/*"],
-            "#validators/*": ["./app/validators/*"],
-            "#routers/*": ["./app/routers/*"]
+            "#controllers/*": ["./app/controllers/*.js"],
+            "#exceptions/*": ["./exceptions/*.js"],
+            "#middleware/*": ["./middleware/*.js"],
+            "#validators/*": ["./validators/*.js"],
+            "#routers/*": ["./routers/*.js"]
         }
     }
 }

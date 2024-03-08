@@ -1,6 +1,6 @@
 import { envs } from './env'
 import express from 'express'
-import { userRouter } from './app/routers/user_router'
+import { userRouter } from '#routers/user_router'
 import helmet from 'helmet'
 
 const app = express()
