@@ -33,6 +33,8 @@
         "zod": "^3.22.4"
     },
     "imports": {
+        "#/*": "./*.ts",
+        "#prisma/*": "./prisma/*.ts",
         "#controllers/*": "./app/controllers/*.ts",
         "#exceptions/*": "./app/exceptions/*.ts",
         "#middleware/*": "./app/middleware/*.ts",

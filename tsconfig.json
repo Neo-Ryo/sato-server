@@ -5,15 +5,17 @@
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true,
-        "baseUrl": "./app",
+        "baseUrl": "./",
         "outDir": "./dist",
         "types": ["node", "express"],
         "paths": {
+            "#/*": ["./*.js"],
+            "#prisma/*": ["./prisma/*.js"],
             "#controllers/*": ["./app/controllers/*.js"],
-            "#exceptions/*": ["./exceptions/*.js"],
-            "#middleware/*": ["./middleware/*.js"],
-            "#validators/*": ["./validators/*.js"],
-            "#routers/*": ["./routers/*.js"]
+            "#exceptions/*": ["./app/exceptions/*.js"],
+            "#middleware/*": ["./app/middleware/*.js"],
+            "#validators/*": ["./app/validators/*.js"],
+            "#routers/*": ["./app/routers/*.js"]
         }
     }
 }
