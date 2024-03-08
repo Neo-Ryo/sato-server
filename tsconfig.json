@@ -5,6 +5,13 @@
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true,
-        "outDir": "./dist"
+        "outDir": "./dist",
+        "paths": {
+            "#controllers/*": ["./app/controllers/*"],
+            "#exceptions/*": ["./app/exceptions/*"],
+            "#middleware/*": ["./app/middleware/*"],
+            "#validators/*": ["./app/validators/*"],
+            "#routers/*": ["./app/routers/*"]
+        }
     }
 }
