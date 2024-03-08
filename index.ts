@@ -1,12 +1,14 @@
 import { envs } from './env'
 import express from 'express'
+import bodyParser from 'body-parser'
+import helmet from 'helmet'
 import { userRouter } from '#routers/user_router'
 import { morganLogs } from '#middleware/logger'
-import helmet from 'helmet'
 
 const app = express()
 
 app.use(helmet())
+app.use(bodyParser.json())
 app.use(morganLogs)
 
 // routes
