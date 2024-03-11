@@ -4,6 +4,7 @@ import bodyParser from 'body-parser'
 import helmet from 'helmet'
 import { userRouter } from '#routers/user_router'
 import { morganLogs } from '#middleware/logger'
+import { errorHandler } from '#exceptions/handler'
 
 const app = express()
 
@@ -16,6 +17,9 @@ app.get('/', (_req, res) => {
     res.status(200).json({ hello: 'world' })
 })
 app.use('/users', userRouter)
+
+// errors
+app.use(errorHandler)
 
 app.listen(envs.PORT, () => {
     console.log(`Server listening to ${envs.HOST}:${envs.PORT}`)
