@@ -9,10 +9,11 @@
         "outDir": "./dist",
         "types": ["node", "express"],
         "paths": {
-            "#/*": ["./*.js"],
+            "#*": ["./*.js"],
             "#prisma/*": ["./prisma/*.js"],
             "#controllers/*": ["./app/controllers/*.js"],
             "#exceptions/*": ["./app/exceptions/*.js"],
+            "#mails/*": ["./app/mails/*.js"],
             "#middleware/*": ["./app/middleware/*.js"],
             "#validators/*": ["./app/validators/*.js"],
             "#routers/*": ["./app/routers/*.js"]
