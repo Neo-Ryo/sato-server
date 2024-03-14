@@ -38,15 +38,13 @@ class EmailHandler {
         from: string,
         to: string,
         subject: string,
-        text?: string,
-        html?: string,
+        html: string,
     ) {
         if (this.transporter && this.isTransporterReady) {
             this.transporter.sendMail({
                 from,
                 to,
                 subject,
-                text,
                 html,
             })
         } else {

@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from 'express'
 import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
 // project files
 import {envs} from "#env"
 import { prisma } from '#prisma/prisma'
@@ -7,6 +8,7 @@ import { signinSchema } from '#validators/user_validator'
 import { CustomError } from '#exceptions/handler'
 import { emailHandler } from "#mails/handler"
 import { valitationEmailTemplate } from "#mails/handleEmailTemplates" 
+import { createURLWithToken } from "#utils/urlCompiler" 
 
 export default class UserController {
     async signup(request: Request, response: Response, next: NextFunction) {
@@ -26,7 +28,10 @@ export default class UserController {
                     username: true,
                 },
             })
-            emailHandler.sendEmail(envs.MAIL_USER, user.email, "Email confirmation","", valitationEmailTemplate('www.google.com'))
+            const token = jwt.sign({
+                email: user.email
+            }, envs.API_KEY)
+            emailHandler.sendEmail(envs.MAIL_USER, user.email, "Email confirmation", valitationEmailTemplate(createURLWithToken(envs.CLIENT_URL,token).toString()))
             response.status(200).json(user)
         } catch (error) {
             next(error)

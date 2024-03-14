@@ -16,7 +16,8 @@
             "#mails/*": ["./app/mails/*.js"],
             "#middleware/*": ["./app/middleware/*.js"],
             "#validators/*": ["./app/validators/*.js"],
-            "#routers/*": ["./app/routers/*.js"]
+            "#routers/*": ["./app/routers/*.js"],
+            "#utils/*": ["./app/utils/*.js"]
         }
     }
 }
