@@ -1,4 +1,5 @@
-import { createTransport, Transporter } from 'nodemailer'
+import { createTransport } from 'nodemailer'
+import type { Transporter } from 'nodemailer'
 import { envs } from '#env'
 import { CustomError } from '#app/exceptions/handler'
 
